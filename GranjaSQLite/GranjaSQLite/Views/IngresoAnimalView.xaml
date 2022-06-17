@@ -22,8 +22,8 @@
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
-                                <Label Text="{Binding idAnimal}" Grid.Row="0" Grid.Column="0" TextColor="blue"/>
-                                <Label Text="{Binding nameAnimal}" Grid.Row="0" Grid.Column="1" TextColor="Gray"/>
+                                <Label Text="{Binding IdAnimal}" Grid.Row="0" Grid.Column="0" TextColor="blue"/>
+                                <Label Text="{Binding NameAnimal}" Grid.Row="0" Grid.Column="1" TextColor="Gray"/>
                             </Grid>
                         </ViewCell> 
                     </DataTemplate>

@@ -8,8 +8,9 @@ namespace GranjaSQLite.Models
     public class Animal
     {
         [PrimaryKey,AutoIncrement]
-        public int idAnimal { get; set; }
+        public int IdAnimal { get; set; }
         [MaxLength (50)]
-        public string nameAnimal { get; set; }
+        public string NameAnimal { get; set; }
+        public  int IdTipo { get; set; } 
     }
 }

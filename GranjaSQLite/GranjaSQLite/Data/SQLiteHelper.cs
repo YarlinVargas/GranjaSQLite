@@ -18,7 +18,7 @@ namespace GranjaSQLite.Data
         //Preparar tarea para guardar registros
         public Task <int> SaveAnimalAsync (Animal animal)
         {
-            if (animal.idAnimal == 0)
+            if (animal.IdAnimal == 0)
             {
                 return db.InsertAsync(animal);
             }
@@ -41,7 +41,13 @@ namespace GranjaSQLite.Data
         /// <returns></returns>
         public Task <Animal> GetAnimalByIdAsync( int idAnimal)
         {
-            return db.Table<Animal>().Where(a => a.idAnimal == idAnimal).FirstOrDefaultAsync();
+            return db.Table<Animal>().Where(a => a.IdAnimal == idAnimal).FirstOrDefaultAsync();
+        }
+
+        public Task<List<Corrales>> GetGenerarReporte(int idTipo, int idAnimal)
+        {
+            // SQL queries are also possible
+            return db.QueryAsync<Corrales>("SELECT Tipo FROM [Corrales] WHERE [IdCorral] = idTipo and Count(idAnimal) >= Capacidad  Order By Tipo");
         }
     }
 }

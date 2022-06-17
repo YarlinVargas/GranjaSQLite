@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GranjaSQLite.Views.ReporteGeneralView">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Label Text="Reporte general!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <ScrollView>
+                <ListView x:Name="listReporteGeneral">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="{Binding IdCorral}" Grid.Row="0" Grid.Column="0" TextColor="blue"/>
+                                    <Label Text="{Binding Tipo}" Grid.Row="0" Grid.Column="1" TextColor="Gray"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+            <Button x:Name="btnGenerarReporte" Text="Ingresar Animal" Clicked="btnGenerarReporte_Clicked"/>
+                
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

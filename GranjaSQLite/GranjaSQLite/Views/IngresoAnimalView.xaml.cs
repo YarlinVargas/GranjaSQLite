@@ -24,7 +24,7 @@ namespace GranjaSQLite.Views
             {
                 Animal animal = new Animal
                 {
-                    nameAnimal = txtNombre.Text
+                    NameAnimal = txtNombre.Text
                 };
                 await App.SQLiteDB.SaveAnimalAsync(animal);
                 txtNombre.Text = "";
