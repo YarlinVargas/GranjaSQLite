@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GranjaSQLite.Views.IngresoAnimalView">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Ingreso de Animales"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Entry x:Name="txtNombre" Placeholder="Nombre"/>
+            <Button x:Name="btnIngresar" Text="Ingresar Animal" Clicked="btnIngresar_Clicked"/>
+            <ListView x:Name="listAnimal">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding idAnimal}" Grid.Row="0" Grid.Column="0" TextColor="blue"/>
+                                <Label Text="{Binding nameAnimal}" Grid.Row="0" Grid.Column="1" TextColor="Gray"/>
+                            </Grid>
+                        </ViewCell> 
+                    </DataTemplate>
+                    
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
